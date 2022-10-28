@@ -8,9 +8,9 @@ const Main = () => {
     const [contador, setContador] = useState(0)
 
     useEffect(() => {
+        document.title = `Contador: ${contador}`
         console.log(contador)
     }, [contador])
-
 
     return (
         <div className='main-container'>
