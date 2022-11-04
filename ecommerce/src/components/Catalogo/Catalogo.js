@@ -1,8 +1,7 @@
 import React from 'react'
-import { Button, Card, Container } from 'react-bootstrap'
-import { productos } from '../../shared/productos'
+import { Button, Card } from 'react-bootstrap'
 
-export const Catalogo = () => {
+export const Catalogo = ( { productos } ) => {
     return (
         <div className='d-flex gap-3 flex-wrap justify-content-center'>
             {

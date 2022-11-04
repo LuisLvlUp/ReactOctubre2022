@@ -10,18 +10,10 @@ export const Navigation = () => {
             <Container>
                 <Navbar.Brand href="#home">E-Commerce</Navbar.Brand>
                 <Nav className="ml-auto">
-                    <Nav.Link>
-                        <Link style={{ padding: 0 }} className='nav-link' to="/">Home</Link>
-                    </Nav.Link>
-                    <Nav.Link>
-                        <Link style={{ padding: 0 }} className='nav-link' to="/producto">Producto</Link>
-                    </Nav.Link>
-                    <Nav.Link>
-                        <Link style={{ padding: 0 }} className='nav-link' to="/catalogo">Catalogo</Link>
-                    </Nav.Link>
-                    <Nav.Link>
-                        <Link style={{ padding: 0 }} className='nav-link' to="/aboutus">About Us</Link>
-                    </Nav.Link>
+                    <Link className='nav-link' to="/">Home</Link>
+                    <Link className='nav-link' to="/producto">Producto</Link>
+                    <Link className='nav-link' to="/catalogo">Catalogo</Link>
+                    <Link className='nav-link' to="/aboutus">About Us</Link>
                 </Nav>
             </Container>
         </Navbar>
