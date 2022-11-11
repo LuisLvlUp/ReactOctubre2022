@@ -17,7 +17,7 @@ export const Main = () => {
       <Navigation />
       <Container>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home setProductos={setProductos} productos={productos} />} />
           <Route path="/producto" element={<NuevoProducto setProductos={setProductos} productos={productos} />} />
           <Route path="/catalogo" element={<Catalogo productos={productos} />} />
           <Route path="aboutus" element={<AboutUs />} />

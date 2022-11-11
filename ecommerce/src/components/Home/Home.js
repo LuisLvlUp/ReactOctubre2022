@@ -1,7 +1,13 @@
 import React from 'react'
+import { Catalogo } from '../Catalogo/Catalogo'
+import { NuevoProducto } from '../NuevoProducto/NuevoProducto'
+import { SplitPane } from '../SplitPane/SplitPane'
 
-export const Home = () => {
+export const Home = ({ productos, setProductos}) => {
   return (
-    <div>Home</div>
+    <SplitPane
+      left={<NuevoProducto setProductos={setProductos} productos={productos} />}
+      right={<Catalogo productos={productos} />}
+    />
   )
 }
