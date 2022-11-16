@@ -1,9 +1,12 @@
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import { Button, Card, Container, Form } from 'react-bootstrap'
+import { ThemeContext } from '../../context/themeContext'
 
 export const NuevoProducto = ({ productos, setProductos}) => {
 
   const formRef = useRef(null)
+
+  const [theme, setTheme] = useContext(ThemeContext)
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -26,7 +29,7 @@ export const NuevoProducto = ({ productos, setProductos}) => {
 
   return (
     <Container className='mt-5'>
-      <Card>
+      <Card bg={ theme.state ? theme.dark.form : theme.light.form }>
         <Card.Header as="h5">Nuevo producto</Card.Header>
         <Card.Body>
           <Form onSubmit={handleSubmit} ref={formRef}>
