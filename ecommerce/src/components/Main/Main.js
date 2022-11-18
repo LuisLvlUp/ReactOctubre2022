@@ -7,6 +7,7 @@ import { Home } from '../Home/Home'
 import { Navigation } from '../Navigation/Navigation'
 import { NuevoProducto } from '../NuevoProducto/NuevoProducto'
 import { productos as data } from '../../shared/productos'
+import { TodoList } from '../TodoList/TodoList'
 
 export const Main = () => {
 
@@ -20,6 +21,7 @@ export const Main = () => {
           <Route path="/" element={<Home setProductos={setProductos} productos={productos} />} />
           <Route path="/producto" element={<NuevoProducto setProductos={setProductos} productos={productos} />} />
           <Route path="/catalogo" element={<Catalogo productos={productos} />} />
+          <Route path="/todo-list" element={<TodoList />} />
           <Route path="aboutus" element={<AboutUs />} />
         </Routes>
       </Container>
