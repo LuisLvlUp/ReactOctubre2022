@@ -3,6 +3,7 @@ import express, { Application } from 'express';//lo de los parentesis se define 
 import morgan from 'morgan'; //se pueden ver las peticiones que se hacen
 import cors from 'cors';
 import indexRoutes from './routes/indexRoutes';
+import colorRoutes from './routes/colorRoutes';
 
 class Server {//esta clase iniciara al servidor
 
@@ -13,18 +14,21 @@ class Server {//esta clase iniciara al servidor
         this.config();
         this.routes();
     }
+    
     config(): void {//de tipo vacio
         this.app.set('port',process.env.PORT ||3000);//el process es para que si ya exite un puerto definido se toma ese o sino agarra el 3000
         //ese set es de app, es como si se le hubiera declarado una variable a app
         this.app.use(morgan('dev'));//el dev es para ver lo que estan pidiendo los clientes
         this.app.use(cors());//pedir los datos al servidor 
         this.app.use(express.json());//para que entienda el formato json y guarda en un req.body
-        this.app.use(express.urlencoded({extended:false}));//porsi para usar formato html
     }
+
     routes():void {//para conf las rutas de mi servidor
         this.app.use('/', indexRoutes);
-        // this.app.use('/api', apiRoutes);
+        this.app.use('/color', colorRoutes);
     }
+
+
     start():void {//inicializar el servidor -> para que el servidor empiece a escuchar
         this.app.listen(this.app.get('port'),() => {  
             console.log('Server on port ',this.app.get('port'));

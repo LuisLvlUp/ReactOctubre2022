@@ -1,5 +1,5 @@
 import { Router } from 'express';//definir un enrutador
-import { indexController } from '../controllers/indexControllers';
+import { indexController } from '../controllers/indexController';
 
 class IndexRoutes{
 
@@ -10,6 +10,7 @@ class IndexRoutes{
     config(): void{
         //ruta inicial
         this.router.get('/',indexController.index);
+        this.router.get('/usuarios',indexController.usuarios);
 
     }
 }
