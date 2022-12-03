@@ -6,8 +6,5 @@ class IndexController {
         //res.send('Hellon')
         res.json({ text: 'API is /api/' });
     }
-    usuarios(req, res) {
-        res.json({ text: 'api de usuarios' });
-    }
 }
 exports.indexController = new IndexController();

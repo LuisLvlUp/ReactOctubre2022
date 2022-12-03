@@ -9,9 +9,11 @@ class ColorRoutes {
     }
     config() {
         //ruta inicial
-        this.router.get('/', colorController_1.colorController.inicio);
-        this.router.get('/azul', colorController_1.colorController.azul);
-        this.router.get('/rojo', colorController_1.colorController.rojo);
+        this.router.get('/', colorController_1.colorController.getColores);
+        this.router.get('/:id', colorController_1.colorController.getColor);
+        this.router.post('/', colorController_1.colorController.newColor);
+        this.router.put('/:id', colorController_1.colorController.editColor);
+        this.router.delete('/:id', colorController_1.colorController.removeColor);
     }
 }
 const colorRoutes = new ColorRoutes();

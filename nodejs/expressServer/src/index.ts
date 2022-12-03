@@ -25,7 +25,7 @@ class Server {//esta clase iniciara al servidor
 
     routes():void {//para conf las rutas de mi servidor
         this.app.use('/', indexRoutes);
-        this.app.use('/color', colorRoutes);
+        this.app.use('/colores', colorRoutes);
     }
 
 

@@ -1,5 +1,6 @@
 import { Router } from 'express';//definir un enrutador
 import { indexController } from '../controllers/indexController';
+import { colorController } from '../controllers/colorController';
 
 class IndexRoutes{
 
@@ -10,8 +11,7 @@ class IndexRoutes{
     config(): void{
         //ruta inicial
         this.router.get('/',indexController.index);
-        this.router.get('/usuarios',indexController.usuarios);
-
+        this.router.get('/color',colorController.getColores);
     }
 }
 const indexRoutes = new IndexRoutes();
