@@ -11,7 +11,7 @@ export const NuevoProducto = ({ productos, setProductos}) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     let { precio, stock, nombre, descripcion, img } = event.target
-    let id = productos[productos.length - 1].id + 1
+    let id = productos.length > 0 ? productos[productos.length - 1].id + 1 : 1
     let producto = {
       id: id,
       precio: precio.value,

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import { Route, Routes } from 'react-router-dom'
 import { AboutUs } from '../AboutUs/AboutUs'
@@ -8,10 +8,18 @@ import { Navigation } from '../Navigation/Navigation'
 import { NuevoProducto } from '../NuevoProducto/NuevoProducto'
 import { productos as data } from '../../shared/productos'
 import { TodoList } from '../TodoList/TodoList'
+import { APIURL } from '../../shared/API'
 
 export const Main = () => {
 
-  const [productos, setProductos] = useState(data)
+  const [productos, setProductos] = useState([])
+
+  useEffect(() => {
+    fetch(`${APIURL}/products`)
+    .then(response => response.json())
+    .then(data => setProductos(data))
+  })
+  
 
   return (
     <>
