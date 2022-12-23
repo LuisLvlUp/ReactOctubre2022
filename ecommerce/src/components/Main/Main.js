@@ -9,6 +9,7 @@ import { NuevoProducto } from '../NuevoProducto/NuevoProducto'
 import { productos as data } from '../../shared/productos'
 import { TodoList } from '../TodoList/TodoList'
 import { APIURL } from '../../shared/API'
+import { Cine } from '../Cine/Cine'
 
 export const Main = () => {
 
@@ -18,7 +19,7 @@ export const Main = () => {
     fetch(`${APIURL}/products`)
     .then(response => response.json())
     .then(data => setProductos(data))
-  })
+  }, [])
   
 
   return (
@@ -31,6 +32,7 @@ export const Main = () => {
           <Route path="/catalogo" element={<Catalogo productos={productos} />} />
           <Route path="/todo-list" element={<TodoList />} />
           <Route path="aboutus" element={<AboutUs />} />
+          <Route path="cine" element={<Cine />} />
         </Routes>
       </Container>
     </>

@@ -31,6 +31,7 @@ export const Navigation = () => {
                     <Link className='nav-link' to="/catalogo">Catalogo</Link>
                     <Link className='nav-link' to="/aboutus">About Us</Link>
                     <Link className='nav-link' to="/todo-list">Todo List</Link>
+                    <Link className='nav-link' to="/cine">Cine</Link>
                     <div className='nav-link' style={{width: '15px', height: '15px'}} onClick={toggleTheme}>
                         {
                             theme.state ?
